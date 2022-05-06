@@ -4,9 +4,21 @@
   <title>지능형로봇 물류 물품찾기</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="colors.js"></script>
 </head>
 <body>
   <h1><a href="index.html">물류서비스</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+  if(document.querySelector('#night_day').value === 'night'){
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+    document.querySelector('#night_day').value = 'day'
+  } else{
+    document.querySelector('body').style = null;
+    document.querySelector('#night_day').value = 'night'
+  }
+  ">
   <div id="grid">
     <ol>
       <li><a href="1.html">기본화면</a></li>
@@ -20,5 +32,8 @@
       </p>
     </div>
   </div>
+  <input type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
 </body>
 </html>
